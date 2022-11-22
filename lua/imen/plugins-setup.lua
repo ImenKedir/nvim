@@ -34,15 +34,10 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	use("sainnhe/gruvbox-material") -- preferred colorscheme
-	use("Yazeed1s/oh-lucy.nvim") -- secondary
-
-	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
-
-	use("szw/vim-maximizer") -- maximizes and restores current window
+	use("Yazeed1s/oh-lucy.nvim") -- second
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
-	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
@@ -52,7 +47,6 @@ return packer.startup(function(use)
 
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
-
 	-- indent guides
 	use("lukas-reineke/indent-blankline.nvim")
 
@@ -104,8 +98,31 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	-- git integration
-	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	-- cursor line highlghter
+	use({
+		"melkster/modicator.nvim",
+		after = "oh-lucy.nvim", -- Add your colorscheme plugin here
+		config = function()
+			require("modicator").setup({
+				-- ...
+			})
+		end,
+	})
+
+	-- smooth scroll
+	use("karb94/neoscroll.nvim")
+
+	-- dim inactive code
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()

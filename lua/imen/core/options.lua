@@ -1,23 +1,24 @@
 local opt = vim.opt
 
--- line numbers 
-opt.relativenumber = true 
-opt.number = true 
+-- line numbers
+opt.relativenumber = true
+opt.number = true
 
--- tabs and indent 
+-- tabs and indent
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+vim.cmd("filetype plugin indent on")
 
--- line wrapping 
+-- line wrapping
 opt.wrap = false
 
--- search settings 
-opt.ignorecase = true 
-opt.smartcase = true 
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
 
--- appearance 
+-- appearance
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
@@ -25,12 +26,9 @@ opt.signcolumn = "yes"
 -- backspace
 opt.backspace = "indent,eol,start"
 
--- clipboard 
+-- clipboard
 opt.clipboard:append("unnamedplus")
 
--- split window 
+-- split window
 opt.splitright = true
 opt.splitbelow = true
-
--- line buffers 
-opt.scrolloff = 12
