@@ -109,8 +109,24 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- task manangment, to-do highlighting
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
 	-- smooth scroll
 	use("karb94/neoscroll.nvim")
+
+	-- debugger / nvim-dap
+	use("mfussenegger/nvim-dap")
 
 	-- dim inactive code
 	use({

@@ -4,6 +4,9 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+-- cursorline
+opt.cursorline = true
+
 -- tabs and indent
 opt.tabstop = 2
 opt.shiftwidth = 2
