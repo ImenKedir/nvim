@@ -33,20 +33,27 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("sainnhe/gruvbox-material") -- preferred colorscheme
-	use("Yazeed1s/oh-lucy.nvim") -- second
+	use("sainnhe/gruvbox-material") -- #TODO: color scheme name
+	use("Yazeed1s/oh-lucy.nvim") -- oh-lucy-evening
+	use("sainnhe/everforest") -- everforest
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 
-	-- commenting with gc
+	-- commenting with gcc
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
 
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
+
 	-- indent guides
 	use("lukas-reineke/indent-blankline.nvim")
 
@@ -127,6 +134,17 @@ return packer.startup(function(use)
 
 	-- debugger / nvim-dap
 	use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap-python")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+
+	-- toggle terminal
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 
 	-- dim inactive code
 	use({
