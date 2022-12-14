@@ -6,6 +6,9 @@ local keymap = vim.keymap -- makes the code pretty
 keymap.set("i", "jk", "<ESC>")
 keymap.set("i", "kj", "<ESC>")
 
+-- motions
+keymap.set("n", "<leader>j", ":HopWord<CR>")
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
@@ -25,13 +28,12 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 keymap.set("n", "<C-h>", "<C-w>h") -- navigate around windows
+keymap.set("n", "<C-j>", "<C-w>j") -- navigate around windows
+keymap.set("n", "<C-k>", "<C-w>k") -- navigate around windows
 keymap.set("n", "<C-l>", "<C-w>l") -- navigate around windows
 
 -- zen mode
 keymap.set("n", "<leader>t", ":Twilight<CR>")
-
--- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
@@ -45,8 +47,8 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>") -- list available 
 
 -- debugger
 keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>") -- set breakpoint
-keymap.set("n", "<leader>c", ":lua require'dap'.continue()<CR>") -- continue exacution
+keymap.set("n", "<leader>p", ":lua require'dap'.continue()<CR>") -- continue exacution
 keymap.set("n", "<leader>si", ":lua require'dap'.step_into()<CR>") -- step into
 keymap.set("n", "<leader>so", ":lua require'dap'.step_over()<CR>") -- step over
-keymap.set("n", "<leader>sO", ":lua require'dap'.step_out()<CR>") -- step over
-keymap.set("n", "<leader>r", ":lua require'dap'.repl.toggle()<CR>") -- step over
+keymap.set("n", "<leader>sb", ":lua require'dap'.step_out()<CR>") -- step over
+-- keymap.set("n", "<leader>r", ":lua require'dap'.repl.toggle()<CR>") -- step over

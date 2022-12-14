@@ -60,21 +60,20 @@ dapui.setup({
 		{
 			elements = {
 				-- Elements can be strings or table with id and size keys.
-				{ id = "scopes", size = 0.25 },
+				"scopes",
 				"breakpoints",
 				"stacks",
-				"watches",
+				-- "watches",
 			},
-			size = 40, -- 40 columns
+			size = 0.30, -- 40 columns
 			position = "left",
 		},
 		{
 			elements = {
 				"repl",
-				"console",
 			},
-			size = 0.25, -- 25% of total lines
-			position = "bottom",
+			size = 1,
+			position = "top",
 		},
 	},
 	controls = {
@@ -83,14 +82,14 @@ dapui.setup({
 		-- Display controls in this element
 		element = "repl",
 		icons = {
-			pause = "",
-			play = "",
-			step_into = "",
-			step_over = "",
-			step_out = "",
-			step_back = "",
-			run_last = "",
-			terminate = "",
+			-- pause = "Pause",
+			play = "Play",
+			step_into = "Into",
+			step_over = "Over",
+			step_out = "Out",
+			-- step_back = " ",
+			-- run_last = " ",
+			terminate = "X",
 		},
 	},
 	floating = {

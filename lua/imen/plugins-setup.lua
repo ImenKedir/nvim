@@ -33,7 +33,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("sainnhe/gruvbox-material") -- #TODO: color scheme name
+	use("sainnhe/gruvbox-material") -- gruvbox-material
+	use("Yazeed1s/minimal.nvim") -- minimal-base16
 	use("Yazeed1s/oh-lucy.nvim") -- oh-lucy-evening
 	use("sainnhe/everforest") -- everforest
 
@@ -50,7 +51,6 @@ return packer.startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 		},
 	})
-
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
 
@@ -62,6 +62,16 @@ return packer.startup(function(use)
 
 	-- start screen
 	use("mhinz/vim-startify")
+
+	-- motions
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -136,15 +146,6 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("mfussenegger/nvim-dap-python")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-
-	-- toggle terminal
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	})
 
 	-- dim inactive code
 	use({
