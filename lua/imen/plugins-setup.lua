@@ -139,23 +139,17 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- smooth scroll
-	use("karb94/neoscroll.nvim")
-
 	-- debugger / nvim-dap
 	use("mfussenegger/nvim-dap")
 	use("mfussenegger/nvim-dap-python")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
-	-- dim inactive code
+	-- toggle terminal
 	use({
-		"folke/twilight.nvim",
+		"akinsho/toggleterm.nvim",
+		tag = "*",
 		config = function()
-			require("twilight").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("toggleterm").setup()
 		end,
 	})
 
