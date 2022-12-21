@@ -43,7 +43,12 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 
 	-- commenting with gcc
-	use("numToStr/Comment.nvim")
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
