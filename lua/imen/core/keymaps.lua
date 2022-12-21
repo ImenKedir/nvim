@@ -42,14 +42,6 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>") -- list available help tags
 
--- toggleterm
-keymap.set("t", "jk", "<C-\\><C-n>") -- exit terminal mode
-keymap.set("t", "kj", "<C-\\><C-n>")
-keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>") -- toggle float terminal
-keymap.set("n", "<leader>tt", ":ToggleTerm direction=vertical size=60<CR>") -- toggle vertical terminal
-keymap.set("n", "<leader>fj", ":ToggleTermSendCurrentLine<CR>") -- send line to terminal
-keymap.set("v", "n", ":ToggleTermSendVisualSelection<CR> v") -- send selection to terminal
-
 -- debugger
 keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>") -- set breakpoint
 keymap.set("n", "<leader>p", ":lua require'dap'.continue()<CR>") -- continue exacution

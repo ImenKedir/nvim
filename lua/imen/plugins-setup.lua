@@ -33,6 +33,7 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+	-- colorscheme
 	use("sainnhe/gruvbox-material") -- gruvbox-material
 	use("Yazeed1s/minimal.nvim") -- minimal-base16
 	use("Yazeed1s/oh-lucy.nvim") -- oh-lucy-evening
@@ -143,15 +144,6 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("mfussenegger/nvim-dap-python")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-
-	-- toggle terminal
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	})
 
 	if packer_bootstrap then
 		require("packer").sync()
